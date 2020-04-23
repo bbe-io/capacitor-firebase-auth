@@ -1,6 +1,6 @@
 {
   "name": "@bbe-io/capacitor-firebase-auth",
-  "version": "0.3.3",
+  "version": "0.3.5",
   "description": "Capacitor plugin for Firebase Authentication",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -41,7 +41,7 @@
       "src": "ios"
     },
     "android": {
-      "src": "android"
+      "src": "android/bbe-io-capacitor-firebase-auth"
     }
   },
   "repository": {
