@@ -3,7 +3,7 @@ package com.baumblatt.capacitor.firebase.auth.handlers;
 import android.content.Intent;
 import android.util.Log;
 
-import com.baumblatt.capacitor.firebase.auth.CapacitorFirebaseAuth;
+import com.baumblatt.capacitor.firebase.auth.BbeIoCapacitorFirebaseAuth;
 import com.baumblatt.capacitor.firebase.auth.R;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.PluginCall;
@@ -27,11 +27,11 @@ public class TwitterProviderHandler implements ProviderHandler {
 
     private static final String TWITTER_TAG = "TwitterProviderHandler";
 
-    private CapacitorFirebaseAuth plugin;
+    private BbeIoCapacitorFirebaseAuth plugin;
     private TwitterLoginButton twitterLoginButton;
 
     @Override
-    public void init(final CapacitorFirebaseAuth plugin) {
+    public void init(final BbeIoCapacitorFirebaseAuth plugin) {
         this.plugin = plugin;
 
         TwitterAuthConfig authConfig =  new TwitterAuthConfig(

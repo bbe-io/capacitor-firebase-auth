@@ -1,10 +1,10 @@
 import { WebPlugin } from '@capacitor/core';
-import {CapacitorFirebaseAuthPlugin, SignInResult} from './definitions';
+import {BbeIoCapacitorFirebaseAuthPlugin, SignInResult} from './definitions';
 
-export class CapacitorFirebaseAuthWeb extends WebPlugin implements CapacitorFirebaseAuthPlugin {
+export class BbeIoCapacitorFirebaseAuthWeb extends WebPlugin implements BbeIoCapacitorFirebaseAuthPlugin {
   constructor() {
     super({
-      name: 'CapacitorFirebaseAuth',
+      name: 'BbeIoCapacitorFirebaseAuth',
       platforms: ['web']
     });
   }
@@ -19,6 +19,6 @@ export class CapacitorFirebaseAuthWeb extends WebPlugin implements CapacitorFire
   }
 }
 
-const CapacitorFirebaseAuth = new CapacitorFirebaseAuthWeb();
+const BbeIoCapacitorFirebaseAuth = new BbeIoCapacitorFirebaseAuthWeb();
 
-export { CapacitorFirebaseAuth };
+export { BbeIoCapacitorFirebaseAuth };

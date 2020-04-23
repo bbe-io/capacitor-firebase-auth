@@ -36,9 +36,9 @@ import java.util.Map;
         TwitterAuthConfig.DEFAULT_AUTH_REQUEST_CODE,
         FacebookProviderHandler.RC_FACEBOOK_LOGIN
 })
-public class CapacitorFirebaseAuth extends Plugin {
-    public static final String CONFIG_KEY_PREFIX = "plugins.CapacitorFirebaseAuth.";
-    private static final String PLUGIN_TAG = "CapacitorFirebaseAuth";
+public class BbeIoCapacitorFirebaseAuth extends Plugin {
+    public static final String CONFIG_KEY_PREFIX = "plugins.BbeIoCapacitorFirebaseAuth.";
+    private static final String PLUGIN_TAG = "BbeIoCapacitorFirebaseAuth";
 
     private FirebaseAuth mAuth;
     private Map<String, ProviderHandler> providerHandlers = new HashMap<>();

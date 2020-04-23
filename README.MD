@@ -32,9 +32,9 @@ If you see the message above, please use `esModuleInterop=true` in your  `tsconf
 ## Next steps
 
 1. Support for Apple provider
-2. Support for PWA 
-3. Email/Password Provider 
-> Should we do this? It's very simple to authenticate on WebView without any plugin. 
+2. Support for PWA
+3. Email/Password Provider
+> Should we do this? It's very simple to authenticate on WebView without any plugin.
 > For awhile, waiting a good reason to do it. (track interest on Issue #24)
 
 ### How to Install
@@ -45,8 +45,8 @@ Install the plugin into your Capacitor project with npm.
 npm install --save capacitor-firebase-auth
 ```
 
-> Don't forget to run `npx cap sync` once after the installation to propagate the plugin to native projects. 
- 
+> Don't forget to run `npx cap sync` once after the installation to propagate the plugin to native projects.
+
 ### How to Config
 
 ### Minimal version of some peer dependencies that breaks with previous versions
@@ -61,7 +61,7 @@ npm install --save capacitor-firebase-auth
     ```
     [...]
       "plugins": {
-        "CapacitorFirebaseAuth": {
+        "BbeIoCapacitorFirebaseAuth": {
           "providers": ["google.com", "twitter.com", "facebook.com", "phone"],
           "languageCode": "en"
           "nativeAuth": false,
@@ -77,17 +77,17 @@ npm install --save capacitor-firebase-auth
 2. In file `android/app/src/main/java/.../MainActivity.java` add the reference to the Capacitor Firebase Auth plugin inside the Bridge initialization.
     ```
     [...]
-    import com.baumblatt.capacitor.firebase.auth.CapacitorFirebaseAuth;
+    import com.baumblatt.capacitor.firebase.auth.BbeIoCapacitorFirebaseAuth;
     // Initializes the Bridge
     this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
       // Additional plugins you've installed go here
       // Ex: add(TotallyAwesomePlugin.class);
-      add(CapacitorFirebaseAuth.class);
+      add(BbeIoCapacitorFirebaseAuth.class);
     }});
     [...]
     ```
-    
-3. In file `android/app/build.gradle` add the following lines : 
+
+3. In file `android/app/build.gradle` add the following lines :
     ```
     android {
         compileOptions {
@@ -129,9 +129,9 @@ npm install --save capacitor-firebase-auth
 1. Enable Google Sign-In in the Firebase console:
     * In the [Firebase console](https://console.firebase.google.com/), open the **Auth** section.
     * On the **Sign in method** tab, enable the **Google** sign-in method and click **Save**.
-     
+
 #### Google Android specific configurations
-    
+
 1. If you haven't yet specified your app's SHA-1 fingerprint, do so from the [Settings page](https://console.firebase.google.com/project/_/settings/general/) of the Firebase console. See [Authenticating Your Client](https://developers.google.com/android/guides/client-auth) for details on how to get your app's SHA-1 fingerprint.
 
 #### Google iOS specific configurations
@@ -159,7 +159,7 @@ npm install --save capacitor-firebase-auth
     ```
     > Don't forget to replace `[APP_ID]` and `[APP_SECRET]` by your Twitter **App ID** and **App Secret** respectively.
 
-2. In file `android/app/build.gradle` add the following lines : 
+2. In file `android/app/build.gradle` add the following lines :
     ```
     android {
         compileOptions {
@@ -189,24 +189,24 @@ npm install --save capacitor-firebase-auth
     * Open your project configuration: double-click the project name in the left tree view. Select your app from the **TARGETS** section, then select the **Info** tab, and expand the **URL Types** section.
     * Click the **+** button, and add a `URL` scheme for the Callback URL of Twitter Kit for iOS. In **URL Schemes** box on the configuration page use `twitterkit-[APP_ID]`. Leave the other fields blank.
 
-3. Dispatch the designated callback URL to Twitter Kit in your `ios/App/App/AppDelegate.swift` file. 
+3. Dispatch the designated callback URL to Twitter Kit in your `ios/App/App/AppDelegate.swift` file.
     ```
       func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // Called when the app was launched with a url. Feel free to add additional processing here,
         // but if you want the App API to support tracking app url opens, make sure to keep this call
-        
+
         if let scheme = url.scheme {
             if scheme.starts(with: "twitterkit") {
                 return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
             }
         }
-        
+
         return CAPBridge.handleOpenUrl(url, options)
       }
     ```
-    
+
 > Don't forget to replace `[APP_ID]` and `[APP_SECRET]` by your Twitter **App ID** and **App Secret** respectively.
-      
+
 
 ## Facebook
 
@@ -218,23 +218,23 @@ npm install --save capacitor-firebase-auth
     * On the **Sign in method** tab, enable the **Facebook** sign-in method and specify the **App ID** and **App Secret** you got from Facebook.
     * Then, make sure your **OAuth redirect URI** (e.g. _my-app-12345.firebaseapp.com/__/auth/handler_) is listed as one of your OAuth redirect URIs in your Facebook app's settings page on the  [Facebook for Developers](https://developers.facebook.com/) site in the **Product Settings** > **Facebook Login** config.
 
-#### Facebook Android specific configurations 
+#### Facebook Android specific configurations
 
 1. Add the dependency for **Facebook SDK** to your app-level build.gradle file:
     ```
     implementation 'com.facebook.android:facebook-android-sdk:4.41.0'
     ```
 2. In file `android/app/src/main/AndroidManifest.xml`, add the following XML elements under `<manifest><application>` :
-   
+
    ```xml
    <meta-data android:name="com.facebook.sdk.ApplicationId"
        android:value="@string/facebook_app_id"/>
-   
+
    <activity
        android:name="com.facebook.FacebookActivity"
        android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
        android:label="@string/app_name" />
-   
+
    <activity
        android:name="com.facebook.CustomTabActivity"
        android:exported="true">
@@ -246,7 +246,7 @@ npm install --save capacitor-firebase-auth
        </intent-filter>
    </activity>
    ```
-   
+
 3. In file `android/app/src/main/res/values/ids.xml` add the following lines :
     ```xml
     <string name="facebook_app_id">[APP_ID]</string>
@@ -270,7 +270,7 @@ npm install --save capacitor-firebase-auth
         <string>[APP_NAME]</string>
         [...]
     </dict>
-    </plist>    
+    </plist>
     ```
 
 2. Add custom URL schemes to your Xcode project:
@@ -295,19 +295,19 @@ npm install --save capacitor-firebase-auth
     Facebook SDK >= 5.0.0
     ```
       import FBSDKCoreKit
-    
+
       ...
-    
+
       func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // Called when the app was launched with a url. Feel free to add additional processing here,
         // but if you want the App API to support tracking app url opens, make sure to keep this call
-        
+
         if let scheme = url.scheme, let host = url.host {
             if scheme == "fb\(String(describing: Settings.appID))" && host == "authorize" {
                 return ApplicationDelegate.shared.application(app, open: url, options: options)
             }
         }
-        
+
         return CAPBridge.handleOpenUrl(url, options)
       }
     ```
@@ -317,13 +317,13 @@ npm install --save capacitor-firebase-auth
       func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // Called when the app was launched with a url. Feel free to add additional processing here,
         // but if you want the App API to support tracking app url opens, make sure to keep this call
-        
+
         if let scheme = url.scheme, let host = url.host {
             if scheme == "fb\(String(describing: FBSDKSettings.appID()))" && host == "authorize" {
                 return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
             }
         }
-        
+
         return CAPBridge.handleOpenUrl(url, options)
       }
     ```
@@ -349,7 +349,7 @@ cfaSignIn('google.com').subscribe(
 ```typescript
  import {cfaSignIn, mapUserToUserInfo} from 'capacitor-firebase-auth';
  import {UserInfo} from 'firebase/app';
- 
+
  cfaSignIn('google.com').pipe(
  	mapUserToUserInfo(),
  ).subscribe(
@@ -409,9 +409,9 @@ firebase.auth().signInWithCredential(credential);
 
 ## Alterantive use of Javascript facade
 
-This implementations of the javascript facade calls, return in addition to the Firebase user 
+This implementations of the javascript facade calls, return in addition to the Firebase user
 the information returned by the plugin from the native layer. For example, in Twitter sign in
-the token and secret are returned for use with Twitter User API. 
+the token and secret are returned for use with Twitter User API.
 
 > Specials thanks for [@go-u](https://github.com/go-u), by this suggested improvement, more information please see issue [#23](https://github.com/baumblatt/capacitor-firebase-auth/issues/23)!
 
@@ -446,8 +446,8 @@ cfaSignInTwitter().subscribe(
 #### Sign In;  Use credentials for something; and map to UserInfo
 
 ```typescript
-import {UserInfo} from 'firebase'; 
-import {cfaSignInTwitter, TwitterSignInResult, mapUserCredentialToUserInfo} from 'capacitor-firebase-auth/alternative'; 
+import {UserInfo} from 'firebase';
+import {cfaSignInTwitter, TwitterSignInResult, mapUserCredentialToUserInfo} from 'capacitor-firebase-auth/alternative';
 import {tap} from 'rxjs/operators';
 
 cfaSignInTwitter().pipe(
@@ -487,7 +487,7 @@ Looking forward to enable FUNDING.yml soon.
 - Configuration for when authenticate on native layer (default false to avoid double billing)
 - Fix the issue #1: Default FirebaseApp is not initialized on Android platform
 - WIP: Phone verification sign in on iOS platform.
-- Phone verification sign in on Android platform. 
+- Phone verification sign in on Android platform.
 - How to install and config on Google, Twitter and Facebook.
 - Fix to work without Facebook configurations.
 - Better sign out implementation.

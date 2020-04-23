@@ -1,6 +1,6 @@
 {
-  "name": "capacitor-firebase-auth",
-  "version": "0.3.0",
+  "name": "@bbe-io/capacitor-firebase-auth",
+  "version": "0.3.2",
   "description": "Capacitor plugin for Firebase Authentication",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -29,7 +29,7 @@
     "dist/",
     "ios/",
     "android/",
-    "CapacitorFirebaseAuth.podspec"
+    "BbeIoCapacitorFirebaseAuth.podspec"
   ],
   "keywords": [
     "capacitor",

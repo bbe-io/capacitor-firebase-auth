@@ -2,7 +2,7 @@ import Foundation
 import Capacitor
 
 protocol ProviderHandler {
-    func initialize(plugin: CapacitorFirebaseAuth) -> Void
+    func initialize(plugin: BbeIoCapacitorFirebaseAuth) -> Void
     func signIn(call: CAPPluginCall) -> Void
     func signOut() throws -> Void
     func isAuthenticated() -> Bool

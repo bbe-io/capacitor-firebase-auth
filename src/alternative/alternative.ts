@@ -4,7 +4,7 @@ import {Observable, throwError} from 'rxjs';
 import 'firebase/auth';
 import * as firebase from 'firebase/app';
 import {
-	CapacitorFirebaseAuthPlugin,
+	BbeIoCapacitorFirebaseAuthPlugin,
 	FacebookSignInResult,
 	GoogleSignInResult,
 	PhoneSignInResult,
@@ -13,7 +13,7 @@ import {
 } from '../definitions';
 
 // @ts-ignore
-const plugin: CapacitorFirebaseAuthPlugin = Plugins.CapacitorFirebaseAuth;
+const plugin: BbeIoCapacitorFirebaseAuthPlugin = Plugins.BbeIoCapacitorFirebaseAuth;
 
 /**
  * Call the sign in method on native layer and sign in on web layer with retrieved credentials.

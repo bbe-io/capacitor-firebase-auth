@@ -7,9 +7,9 @@ import GoogleSignIn
 
 class GoogleProviderHandler: NSObject, ProviderHandler, GIDSignInDelegate {
 
-    var plugin: CapacitorFirebaseAuth? = nil
+    var plugin: BbeIoCapacitorFirebaseAuth? = nil
 
-    func initialize(plugin: CapacitorFirebaseAuth) {
+    func initialize(plugin: BbeIoCapacitorFirebaseAuth) {
         print("Initializing Google Provider Handler")
 
         self.plugin = plugin
@@ -19,11 +19,11 @@ class GoogleProviderHandler: NSObject, ProviderHandler, GIDSignInDelegate {
         GIDSignIn.sharedInstance().presentingViewController = self.plugin?.bridge.viewController
 
         let permissions = self.plugin?.getConfigValue("permissions") as? [String:Any] ?? [:]
-        
+
         if let scopes = permissions["google"] as? [String] {
             GIDSignIn.sharedInstance().scopes = scopes;
         }
-        
+
         NotificationCenter.default
             .addObserver(self, selector: #selector(handleOpenUrl(_ :)), name: Notification.Name(CAPNotifications.URLOpen.name()), object: nil)
     }
