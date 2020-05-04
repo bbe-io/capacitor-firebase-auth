@@ -5,11 +5,9 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.util.SparseArray;
 
-import com.baumblatt.capacitor.firebase.auth.handlers.FacebookProviderHandler;
 import com.baumblatt.capacitor.firebase.auth.handlers.GoogleProviderHandler;
 import com.baumblatt.capacitor.firebase.auth.handlers.PhoneProviderHandler;
 import com.baumblatt.capacitor.firebase.auth.handlers.ProviderHandler;
-import com.baumblatt.capacitor.firebase.auth.handlers.TwitterProviderHandler;
 import com.getcapacitor.Config;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
@@ -24,7 +22,6 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
 
 import org.json.JSONObject;
 
@@ -32,9 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @NativePlugin(requestCodes = {
-        GoogleProviderHandler.RC_GOOGLE_SIGN_IN,
-        TwitterAuthConfig.DEFAULT_AUTH_REQUEST_CODE,
-        FacebookProviderHandler.RC_FACEBOOK_LOGIN
+        GoogleProviderHandler.RC_GOOGLE_SIGN_IN
 })
 public class BbeIoCapacitorFirebaseAuth extends Plugin {
     public static final String CONFIG_KEY_PREFIX = "plugins.BbeIoCapacitorFirebaseAuth.";
@@ -72,16 +67,6 @@ public class BbeIoCapacitorFirebaseAuth extends Plugin {
                 this.providerHandlers.put(provider, new GoogleProviderHandler());
                 this.providerHandlers.get(provider).init(this);
                 Log.d(PLUGIN_TAG, "Google Provider Initialized");
-            } else if (provider.equalsIgnoreCase(getContext().getString(R.string.twitter_provider_id))) {
-                Log.d(PLUGIN_TAG, "Initializing Twitter Provider");
-                this.providerHandlers.put(provider, new TwitterProviderHandler());
-                this.providerHandlers.get(provider).init(this);
-                Log.d(PLUGIN_TAG, "Twitter Provider Initialized");
-            } else if (provider.equalsIgnoreCase(getContext().getString(R.string.facebook_provider_id))) {
-                Log.d(PLUGIN_TAG, "Initializing Facebook Provider");
-                this.providerHandlers.put(provider, new FacebookProviderHandler());
-                this.providerHandlers.get(provider).init(this);
-                Log.d(PLUGIN_TAG, "Facebook Provider Initialized");
             } else if (provider.equalsIgnoreCase(getContext().getString(R.string.phone_provider_id))) {
                 Log.d(PLUGIN_TAG, "Initializing Phone Provider");
                 this.providerHandlers.put(provider, new PhoneProviderHandler());

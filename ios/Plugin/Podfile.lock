@@ -1,18 +1,8 @@
 PODS:
-  - Bolts (1.9.0):
-    - Bolts/AppLinks (= 1.9.0)
-    - Bolts/Tasks (= 1.9.0)
-  - Bolts/AppLinks (1.9.0):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.9.0)
   - Capacitor (0.0.113):
     - CapacitorCordova (= 0.0.113)
     - GCDWebServer (~> 3.0)
   - CapacitorCordova (0.0.113)
-  - FBSDKCoreKit (4.40.0):
-    - Bolts (~> 1.9)
-  - FBSDKLoginKit (4.40.0):
-    - FBSDKCoreKit
   - Firebase/Auth (5.18.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.4.0)
@@ -87,26 +77,17 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - TwitterCore (3.2.0)
-  - TwitterKit (3.4.2):
-    - TwitterCore (>= 3.2.0)
 
 DEPENDENCIES:
   - Capacitor
-  - FBSDKCoreKit
-  - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
   - GoogleSignIn
-  - TwitterKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Bolts
+  https://github.com/CocoaPods/Specs.git:
     - Capacitor
     - CapacitorCordova
-    - FBSDKCoreKit
-    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -120,15 +101,10 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - nanopb
-    - TwitterCore
-    - TwitterKit
 
 SPEC CHECKSUMS:
-  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Capacitor: b37060b0b2685257bedbc69e49a54a74ef30fb9a
   CapacitorCordova: a923a32bc7ad5f1f3d69664ca86ff69580343ed3
-  FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
-  FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   Firebase: 02f3281965c075426141a0ce1277e9de6649cab9
   FirebaseAnalytics: 23851fe602c872130a2c5c55040b302120346cc2
   FirebaseAuth: d85d052354447f30b4b2a805ab91b511458b56a6
@@ -142,9 +118,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
-  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
-PODFILE CHECKSUM: 4707f7975c123ec729bb064a46eb62a2b2528f83
+PODFILE CHECKSUM: fcff284aaac752f073dcecacf21908f68d67b489
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.9.1

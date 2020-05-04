@@ -9,9 +9,6 @@ target 'Plugin' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
-  pod 'TwitterKit'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
 
   # Pods for IonicRunner
   pod 'Capacitor'
@@ -23,9 +20,6 @@ target 'PluginTests' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
-  pod 'TwitterKit'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
 
   pod 'Capacitor'
 end
