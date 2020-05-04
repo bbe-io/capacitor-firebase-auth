@@ -33,7 +33,7 @@ import java.util.Map;
 })
 public class BbeIoCapacitorFirebaseAuth extends Plugin {
     public static final String CONFIG_KEY_PREFIX = "plugins.BbeIoCapacitorFirebaseAuth.";
-    private static final String PLUGIN_TAG = "BbeIoCapacitorFirebaseAuth";
+    private static final String PLUGIN_TAG = "CapacitorFirebaseAuth";
 
     private FirebaseAuth mAuth;
     private Map<String, ProviderHandler> providerHandlers = new HashMap<>();
